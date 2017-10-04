@@ -51,7 +51,7 @@ public class TrackerService extends AccessibilityService {
         Log.d(TAG, "onAccessibilityEvent: " + event.getPackageName());
         if (event.getEventType() == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED) {
             String className = event.getClassName().toString();
-            Toast.makeText(TrackerService.this, className, Toast.LENGTH_SHORT).show();
+            Toast.makeText(TrackerService.this, className, Toast.LENGTH_LONG).show();
             EventBus.getDefault().post(new ActivityChangedEvent(
                     event.getPackageName().toString(),
                     event.getClassName().toString()
